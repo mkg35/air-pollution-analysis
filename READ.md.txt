@@ -1,0 +1,65 @@
+# Hava Kirliliği Tahmin ve Kümelendirme Projesi
+
+## Proje Açıklaması
+
+Bu proje, hava kirliliği verilerini kullanarak makine öğrenmesinde iki temel alanı incelemeyi amaçlamaktadır: Gözetimli Öğrenme ve Gözetimsiz Öğrenme. Bu bağlamda, Lineer Regresyon (Gözetimli Öğrenme) ve K-Means Clustering (Gözetimsiz Öğrenme) algoritmaları kullanılmıştır.
+
+## Kullanılan Algoritmalar
+
+### 1. Gözetimli Öğrenme Algoritması: Lineer Regresyon
+
+- **Açıklama:** Lineer Regresyon, sürekli hedef değişkenleri tahmin etmek için kullanılan bir gözetimli öğrenme algoritmasıdır.
+- **Performans:** 
+  - **Root Mean Squared Error (RMSE):** 40.31
+  - RMSE değeri, tahminlerin gerçek değerlere ne kadar yakın olduğunu gösterir. Daha düşük bir RMSE, modelin daha iyi performans gösterdiğini işaret eder.
+
+### 2. Gözetimsiz Öğrenme Algoritması: K-Means Clustering
+
+- **Açıklama:** K-Means Clustering, veriyi kümelere ayırmak için kullanılan bir gözetimsiz öğrenme algoritmasıdır.
+- **Not:** K-Means Clustering kodu çalıştırılmıştır ancak sonuç alınamamıştır. Kodun çalıştığına dair hata mesajı alınmamakla birlikte, kümeler üzerinde herhangi bir görsel veya metinsel çıktı elde edilememiştir. K-Means clustering sonuçlarının Kaggle'da kaydedilmediğini ve bu nedenle notebook'ta metin şeklinde açıklandığını belirtmek isterim.
+
+## Veri Seti
+
+- **Veri Seti Adı:** air_pollution.csv
+- **Açıklama:** Veri seti, hava kirliliği ölçümlerini içermektedir ve aşağıdaki sütunları içermektedir:
+  - Measurement date
+  - Station code
+  - Address
+  - Latitude
+  - Longitude
+  - SO2
+  - NO2
+  - O3
+  - CO
+  - PM10
+  - PM2.5
+
+## Performans Karşılaştırması
+
+### Gözetimli Öğrenme (Lineer Regresyon)
+
+- **Performans:** 
+  - **RMSE:** 40.31
+  - Lineer Regresyon, PM2.5 değerlerini tahmin etmede kullanılmak üzere uygun bir algoritmadır. Özellikle hedef değişkenin sürekli olduğu durumlarda etkili olabilir.
+
+### Gözetimsiz Öğrenme (K-Means Clustering)
+
+- **Performans:** 
+  - **Silhouette Skoru:** [Sonuç] (Elde edilemedi)
+  - K-Means Clustering algoritması, veriyi anlamlı kümelere ayırmak için kullanılır. Ancak, mevcut kod çalıştırılmış olmasına rağmen herhangi bir görsel veya metinsel çıktı alınamamıştır. Bu, algoritmanın veya veri setinin uygunluğuyla ilgili bir sorun olabilir. K-Means clustering kodlarının çalışmadığını ve sonuçların Kaggle'da kaydedilmediğini, bu nedenle notebook'ta metin şeklinde açıklandığını belirtmek isterim.
+
+## Veri Setinin Uygunluğu
+
+- **Gözetimli Öğrenme:** Veri setindeki hedef değişken (PM2.5) sürekli bir değer olduğundan, Lineer Regresyon gibi gözetimli öğrenme algoritmaları bu tür tahminler için uygundur. Özellikle, verisetindeki diğer özellikler PM2.5 ile olan ilişkileri değerlendirmek ve tahminler yapmak için kullanılabilir.
+  
+- **Gözetimsiz Öğrenme:** K-Means Clustering, veri setindeki gözlemleri kümelere ayırmak için kullanılır. Ancak, K-Means algoritması özellikle sayısal ve normalleştirilmiş verilerle etkili çalışır. Mevcut verisetindeki bazı sütunların (örneğin, adres bilgileri) çıkarılması ve verinin doğru şekilde normalleştirilmesi gerekebilir. Kodun çalıştığına dair herhangi bir çıktı alınamaması, verinin veya algoritmanın uygunluğu konusunda bir sorun olduğunu gösterebilir.
+
+## Kaggle Projesi
+
+Proje hakkında daha fazla bilgi ve kodlar için [Kaggle projesi bağlantısı](https://www.kaggle.com/code/mkguler/mkgulerairpollution) kullanılabilir.
+
+## Kurulum ve Çalıştırma
+
+Proje ile ilgili gerekli kütüphaneleri yüklemek için:
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
